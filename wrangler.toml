@@ -1,0 +1,12 @@
+# The online rooms of Dos (the worker keeps its first name): one Durable Object per room, players talk to it over a WebSocket.
+name = "surge-rooms"
+main = "server/worker.ts"
+compatibility_date = "2025-10-01"
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]

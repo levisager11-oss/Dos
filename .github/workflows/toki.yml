@@ -1,0 +1,27 @@
+# Builds the game on every push to main and puts it on Toki (https://www.playtoki.app).
+# It uploads with the repository secret TOKI_KEY (a Toki upload key). Without that secret it
+# uses GitHub's signed proof instead, which works once the game follows this repository on Toki
+# (game settings -> From GitHub).
+name: Toki
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: toki
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: curl -fsSL https://www.playtoki.app/toki-upload.mjs -o "$RUNNER_TEMP/toki-upload.mjs"
+      - run: node "$RUNNER_TEMP/toki-upload.mjs" --build
+        env:
+          TOKI_KEY: ${{ secrets.TOKI_KEY }}

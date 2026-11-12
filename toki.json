@@ -1,0 +1,132 @@
+{
+  "title": "Dos",
+  "slug": "dos",
+  "description": "A fast card game that fights back. Match suits and numbers to get rid of your cards, throw chaos cards that swap hands, lock suits or roll the dice, and charge up energy for a shield, a card trade or a turbo turn. Play online with up to 6 friends or solo against bots.",
+  "description_de": "Ein schnelles Kartenspiel, das zurückschlägt. Lege passende Farben und Zahlen ab, wirf Chaoskarten, die Hände tauschen, Farben sperren oder würfeln, und lade Energie auf für Schild, Umtausch oder Turbo-Zug. Spiele online mit bis zu 6 Freunden oder solo gegen Bots.",
+  "controls": "Tap or click a card to play it. Tap the deck to draw. Spend energy on Trade, Shield and Turbo when it's your turn.",
+  "category": "strategy",
+  "engine": "Preact",
+  "version": "1.0",
+  "update_title": "Dos is here",
+  "notes": [
+    "Play online with up to 6 friends, or solo against bots",
+    "Chaos cards: Prism, Lock, Swap, Gift and Dice",
+    "Energy powers: Trade, Shield and Turbo",
+    "High scores and 11 achievements"
+  ],
+  "cover_image": "cover.png",
+  "screenshots": [
+    "shots/1.png",
+    "shots/2.png",
+    "shots/3.png"
+  ],
+  "score_order": "high",
+  "score_format": "points",
+  "multiplayer": true,
+  "max_players": 6,
+  "folder": "dist",
+  "achievements": [
+    {
+      "id": "first-win",
+      "name": "First win",
+      "name_de": "Erster Sieg",
+      "description": "Win a round.",
+      "description_de": "Gewinne eine Runde.",
+      "icon": "🏆"
+    },
+    {
+      "id": "wins-10",
+      "name": "On a roll",
+      "name_de": "In Fahrt",
+      "description": "Win 10 rounds.",
+      "description_de": "Gewinne 10 Runden.",
+      "icon": "🔥"
+    },
+    {
+      "id": "big-score",
+      "name": "Big haul",
+      "name_de": "Fette Beute",
+      "description": "Win a round with 100 points or more.",
+      "description_de": "Gewinne eine Runde mit 100 Punkten oder mehr.",
+      "icon": "💰"
+    },
+    {
+      "id": "shield-block",
+      "name": "Not today",
+      "name_de": "Heute nicht",
+      "description": "Block an attack with your shield.",
+      "description_de": "Wehre einen Angriff mit deinem Schild ab.",
+      "icon": "🛡️"
+    },
+    {
+      "id": "turbo-finish",
+      "name": "Turbo finish",
+      "name_de": "Turbo-Finale",
+      "description": "Play your last card on a Turbo turn.",
+      "description_de": "Lege deine letzte Karte in einem Turbo-Zug.",
+      "icon": "🚀"
+    },
+    {
+      "id": "swap-master",
+      "name": "Great trade",
+      "name_de": "Guter Tausch",
+      "description": "Swap hands and get rid of 4 cards or more.",
+      "description_de": "Tausche die Hand und werde dabei 4 oder mehr Karten los.",
+      "icon": "🔀"
+    },
+    {
+      "id": "spike-chain",
+      "name": "Ouch",
+      "name_de": "Autsch",
+      "description": "Make someone draw 6 cards or more with a Spike.",
+      "description_de": "Lass jemanden mit einem Stachel 6 oder mehr Karten ziehen.",
+      "icon": "🌵"
+    },
+    {
+      "id": "jackpot",
+      "name": "Jackpot",
+      "name_de": "Jackpot",
+      "description": "Roll the jackpot with a Dice card.",
+      "description_de": "Knacke mit einer Würfelkarte den Jackpot.",
+      "icon": "🎲"
+    },
+    {
+      "id": "comeback",
+      "name": "Comeback",
+      "name_de": "Comeback",
+      "description": "Win a round after holding 12 cards or more.",
+      "description_de": "Gewinne eine Runde, in der du 12 oder mehr Karten hattest.",
+      "icon": "💪"
+    },
+    {
+      "id": "full-table",
+      "name": "Full house",
+      "name_de": "Volles Haus",
+      "description": "Win at a table of 6.",
+      "description_de": "Gewinne an einem Tisch mit 6 Spielern.",
+      "icon": "🎉"
+    },
+    {
+      "id": "with-friends",
+      "name": "Better together",
+      "name_de": "Gemeinsam besser",
+      "description": "Win an online round against another person.",
+      "description_de": "Gewinne eine Online-Runde gegen einen anderen Menschen.",
+      "icon": "🤝"
+    }
+  ],
+  "boards": [
+    {
+      "id": "",
+      "name": "Best round",
+      "name_de": "Beste Runde"
+    },
+    {
+      "id": "wins",
+      "name": "Total wins",
+      "name_de": "Siege gesamt",
+      "score_order": "high",
+      "score_format": "points"
+    }
+  ]
+}
