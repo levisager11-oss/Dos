@@ -107,18 +107,35 @@ input::placeholder { color: #59626d; }
 .error { background: #3a1719; border: 2px solid var(--danger); color: #ffd0d1; padding: 10px 14px; border-radius: 6px; font-weight: 700; font-size: 14px; max-width: 380px; text-align: center; }
 
 /* Home and lobby */
-.home, .lobby { flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 12px 16px 28px; }
-.home-top { align-self: stretch; display: flex; justify-content: flex-end; gap: 8px; }
-.logo { display: flex; align-items: center; gap: 4px; font-family: var(--f-px); font-weight: 700; font-size: clamp(48px, 15vw, 76px); line-height: 1; color: var(--gold); text-shadow: 5px 5px 0 var(--ember), 5px 5px 0 #000; margin-top: 6px; }
+.home, .lobby { position: relative; flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; justify-content: safe center; gap: 14px; padding: 12px 16px 20px; }
+.home-top { position: absolute; top: 10px; right: 12px; display: flex; gap: 8px; z-index: 1; }
+.home-body { display: flex; flex-direction: column; align-items: center; gap: clamp(8px, 2vh, 14px); width: 100%; }
+.hero, .home-side { display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.6vh, 12px); max-width: 100%; }
+.home-side { width: min(380px, 100%); }
+.logo { display: flex; align-items: center; gap: 4px; font-family: var(--f-px); font-weight: 700; font-size: clamp(40px, min(15vw, 10vh), 76px); line-height: 1; color: var(--gold); text-shadow: 0.07em 0.07em 0 var(--ember), 0.07em 0.07em 0 #000; margin-top: 6px; }
 .logo .icon { width: 0.72em; height: 0.72em; color: var(--ember); }
-.tagline { margin: -4px 0 0; color: var(--muted); font-weight: 600; text-align: center; }
-.fan { display: flex; --cw: clamp(48px, 13vw, 66px); margin: 6px 0 2px; }
+.tagline { margin: 0; color: var(--muted); font-weight: 600; text-align: center; }
+.fan { display: flex; --cw: clamp(40px, min(13vw, 8.5vh), 66px); margin: 6px 0 2px; }
 .fan .card { margin: 0 -5px; pointer-events: none; }
 .fan .card:nth-child(1) { transform: rotate(-14deg) translateY(9px); }
 .fan .card:nth-child(2) { transform: rotate(-7deg) translateY(2px); }
 .fan .card:nth-child(4) { transform: rotate(7deg) translateY(2px); }
 .fan .card:nth-child(5) { transform: rotate(14deg) translateY(9px); }
-.stats { font-family: var(--f-px); color: var(--muted); font-size: 11px; margin: 0; text-transform: uppercase; }
+/* Wide but not tall (the game inside Toki on a computer): title and menu side by side. */
+@media (min-width: 760px) and (max-height: 860px) {
+  .home-body { flex-direction: row; justify-content: center; gap: 56px; }
+  .hero { gap: 16px; }
+  .logo { font-size: clamp(56px, 8vw, 92px); }
+  .fan { --cw: clamp(56px, 7vw, 84px); margin-top: 14px; }
+}
+/* Small screens: leave out what is only decoration, so nothing has to scroll. */
+@media (max-width: 759px) and (max-height: 700px) { .fan { display: none; } }
+@media (max-width: 759px) and (max-height: 560px) {
+  .tagline { display: none; }
+  .home .panel { gap: 8px; padding: 12px; }
+  .home .btn, .home input { padding-top: 9px; padding-bottom: 9px; }
+}
+.stats { font-family: var(--f-px); color: var(--muted); font-size: 11px; margin: 4px 0 0; text-transform: uppercase; }
 .room-code { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .room-code span { font-family: var(--f-px); font-size: 11px; color: var(--muted); text-transform: uppercase; }
 .room-code strong { font-family: var(--f-px); font-size: 44px; line-height: 1.1; letter-spacing: 0.1em; color: var(--gold); text-shadow: 3px 3px 0 #000; user-select: text; -webkit-user-select: text; }

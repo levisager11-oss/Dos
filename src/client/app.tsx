@@ -170,39 +170,45 @@ function Home(p: { error: string; onSolo(): void; onCreate(): void; onJoin(code:
         <button class="chip" onClick={() => { save({ lang: lang() === "de" ? "en" : "de" }); p.redraw(); }}>{lang() === "de" ? "DE" : "EN"}</button>
         <button class="chip" onClick={() => { save({ mute: !saved.mute }); p.redraw(); }}><Icon name={saved.mute ? "mute" : "sound"} size={16} /></button>
       </div>
-      <Logo />
-      <p class="tagline">{t("tagline")}</p>
-      <div class="fan" aria-hidden="true">
-        <CardView card={{ id: -1, k: "num", s: "tide", n: 7 }} />
-        <CardView card={{ id: -2, k: "spike", s: "ember", n: 0 }} />
-        <CardView card={{ id: -3, k: "dice", s: null, n: 0 }} />
-        <CardView card={{ id: -4, k: "num", s: "moss", n: 3 }} />
-        <CardView card={{ id: -5, k: "flip", s: "dusk", n: 0 }} />
-      </div>
-      {p.error && <div class="error">{p.error}</div>}
-      <div class="panel">
-        <label class="field">
-          <span>{t("yourName")}</span>
-          <input value={saved.name} maxLength={16} placeholder="Player" autocomplete="off"
-            onInput={(e) => { save({ name: (e.target as HTMLInputElement).value }); p.redraw(); }} />
-        </label>
-        <div class="row">
-          <button class="btn primary grow" onClick={p.onSolo}>{t("playSolo")}</button>
-          <label class="stepper" title={t("bots")}>
-            <button onClick={() => { save({ bots: Math.max(1, saved.bots - 1) }); p.redraw(); }}>−</button>
-            <span>{saved.bots} {t("bots")}</span>
-            <button onClick={() => { save({ bots: Math.min(MAX_PLAYERS - 1, saved.bots + 1) }); p.redraw(); }}>+</button>
-          </label>
+      <div class="home-body">
+        <div class="hero">
+          <Logo />
+          <p class="tagline">{t("tagline")}</p>
+          <div class="fan" aria-hidden="true">
+            <CardView card={{ id: -1, k: "num", s: "tide", n: 7 }} />
+            <CardView card={{ id: -2, k: "spike", s: "ember", n: 0 }} />
+            <CardView card={{ id: -3, k: "dice", s: null, n: 0 }} />
+            <CardView card={{ id: -4, k: "num", s: "moss", n: 3 }} />
+            <CardView card={{ id: -5, k: "flip", s: "dusk", n: 0 }} />
+          </div>
         </div>
-        <button class="btn" onClick={p.onCreate}>{t("createRoom")}</button>
-        <form class="row" onSubmit={(e) => { e.preventDefault(); if (ok) p.onJoin(code); }}>
-          <input class="grow code-input" value={code} maxLength={8} placeholder={t("roomCode")} autocomplete="off" autocapitalize="characters"
-            onInput={(e) => setCode((e.target as HTMLInputElement).value.toUpperCase().replace(/[^A-Z0-9]/g, ""))} />
-          <button class="btn" disabled={!ok}>{t("joinRoom")}</button>
-        </form>
-        <button class="btn ghost" onClick={p.onHelp}>{t("howTo")}</button>
+        <div class="home-side">
+          {p.error && <div class="error">{p.error}</div>}
+          <div class="panel">
+            <label class="field">
+              <span>{t("yourName")}</span>
+              <input value={saved.name} maxLength={16} placeholder="Player" autocomplete="off"
+                onInput={(e) => { save({ name: (e.target as HTMLInputElement).value }); p.redraw(); }} />
+            </label>
+            <div class="row">
+              <button class="btn primary grow" onClick={p.onSolo}>{t("playSolo")}</button>
+              <label class="stepper" title={t("bots")}>
+                <button onClick={() => { save({ bots: Math.max(1, saved.bots - 1) }); p.redraw(); }}>−</button>
+                <span>{saved.bots} {t("bots")}</span>
+                <button onClick={() => { save({ bots: Math.min(MAX_PLAYERS - 1, saved.bots + 1) }); p.redraw(); }}>+</button>
+              </label>
+            </div>
+            <button class="btn" onClick={p.onCreate}>{t("createRoom")}</button>
+            <form class="row" onSubmit={(e) => { e.preventDefault(); if (ok) p.onJoin(code); }}>
+              <input class="grow code-input" value={code} maxLength={8} placeholder={t("roomCode")} autocomplete="off" autocapitalize="characters"
+                onInput={(e) => setCode((e.target as HTMLInputElement).value.toUpperCase().replace(/[^A-Z0-9]/g, ""))} />
+              <button class="btn" disabled={!ok}>{t("joinRoom")}</button>
+            </form>
+            <button class="btn ghost" onClick={p.onHelp}>{t("howTo")}</button>
+          </div>
+          {saved.wins > 0 && <p class="stats">{t("stats", { wins: saved.wins, best: saved.best })}</p>}
+        </div>
       </div>
-      {saved.wins > 0 && <p class="stats">{t("stats", { wins: saved.wins, best: saved.best })}</p>}
     </div>
   );
 }
