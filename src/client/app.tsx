@@ -158,7 +158,7 @@ export function App() {
 }
 
 function Logo() {
-  return <div class="logo"><Icon name="bolt" size={40} /><span>SURGE</span></div>;
+  return <div class="logo"><Icon name="bolt" size={40} /><span>DOS</span></div>;
 }
 
 function Home(p: { error: string; onSolo(): void; onCreate(): void; onJoin(code: string): void; onHelp(): void; redraw(): void }) {

@@ -12,7 +12,7 @@ export interface Saved {
   seenHelp: boolean;
 }
 
-const KEY = "surge:v1";
+const KEY = "dos:v1";
 
 function newPid(): string {
   const a = new Uint8Array(18);

@@ -1,4 +1,4 @@
-// The rules of Surge. Pure functions on a plain object, so the same code runs in the online
+// The rules of Dos. Pure functions on a plain object, so the same code runs in the online
 // room (Cloudflare) and in the browser (solo against bots).
 
 export const SUITS = ["ember", "tide", "moss", "dusk"] as const;

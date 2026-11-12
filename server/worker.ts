@@ -1,4 +1,4 @@
-// The online rooms of Surge on Cloudflare: one Durable Object per room code. Players connect
+// The online rooms of Dos on Cloudflare: one Durable Object per room code. Players connect
 // with a WebSocket; the room keeps its state in storage, so it survives being put to sleep.
 import { DurableObject } from "cloudflare:workers";
 import { ClientMsg, RoomCore, RoomState, newRoom } from "../src/shared/room";
@@ -12,7 +12,7 @@ export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
     const m = url.pathname.match(/^\/ws\/([A-Za-z0-9]+)$/);
-    if (!m) return new Response("Surge rooms are running.", { headers: cors });
+    if (!m) return new Response("Dos rooms are running.", { headers: cors });
     const code = m[1].toUpperCase();
     if (!CODE.test(code)) return new Response("bad code", { status: 400, headers: cors });
     if (req.headers.get("Upgrade") !== "websocket") return new Response("expected websocket", { status: 426, headers: cors });

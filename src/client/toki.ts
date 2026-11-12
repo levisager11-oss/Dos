@@ -1,4 +1,4 @@
-// Everything Surge does with Toki (https://playtoki.app): high scores, achievements, inviting
+// Everything Dos does with Toki (https://playtoki.app): high scores, achievements, inviting
 // friends into a room and the player's name. Outside Toki these calls do nothing.
 import { saved, save } from "./store";
 

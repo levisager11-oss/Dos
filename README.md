@@ -1,4 +1,4 @@
-# Surge
+# Dos
 
 A fast card game for [Toki](https://www.playtoki.app): get rid of your cards by matching suits and
 numbers, throw chaos cards, and spend energy on powers. Online with up to 6 players, or solo
