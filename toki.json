@@ -1,15 +1,18 @@
 {
   "title": "Dos",
-  "slug": "surge",
+  "slug": "dos",
   "description": "A fast card game that fights back. Match suits and numbers to get rid of your cards, throw chaos cards that swap hands, lock suits or roll the dice, and charge up energy for a shield, a card trade or a turbo turn. Play online with up to 6 friends or solo against bots.",
   "description_de": "Ein schnelles Kartenspiel, das zurückschlägt. Lege passende Farben und Zahlen ab, wirf Chaoskarten, die Hände tauschen, Farben sperren oder würfeln, und lade Energie auf für Schild, Umtausch oder Turbo-Zug. Spiele online mit bis zu 6 Freunden oder solo gegen Bots.",
   "controls": "Tap or click a card to play it. Tap the deck to draw. Spend energy on Trade, Shield and Turbo when it's your turn.",
   "category": "strategy",
   "engine": "Preact",
-  "version": "1.0.1",
-  "update_title": "Now called Dos",
+  "version": "1.0",
+  "update_title": "Dos is here",
   "notes": [
-    "The game is now called Dos"
+    "Play online with up to 6 friends, or solo against bots",
+    "Chaos cards: Prism, Lock, Swap, Gift and Dice",
+    "Energy powers: Trade, Shield and Turbo",
+    "High scores and 11 achievements"
   ],
   "cover_image": "cover.png",
   "screenshots": [
